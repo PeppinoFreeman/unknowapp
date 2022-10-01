@@ -33,6 +33,12 @@ app.get('/profile-picture2', function (req, res) {
   res.end(img, 'binary');
 });
 
+app.get('/logo', function (req, res) {
+  let img = fs.readFileSync(path.join(__dirname, "images/logo-babiyo.png"));
+  res.writeHead(200, {'Content-Type': 'image/png' });
+  res.end(img, 'binary');
+});
+
 
 // use when starting application locally
 let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
