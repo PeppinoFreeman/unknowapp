@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+<style>
+    img {
+        width: 328px;
+        height: 287px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width:425px) {
+        #navbarSupportedContent {
+            padding-top: 10px;
+        }
+    }
+</style>
+
+<script>
+    function editProfile() {
+        document.querySelector(".container").getElementsByClassName.display =
+            "none";
+        document.querySelector(".container-edit").style.display = "block";
+
+        const name = document.querySelector("#name").textContent;
+        document.querySelector("#input-name").value = name;
+
+        const email = document.querySelector("#email").textContent;
+        document.querySelector("#input-email").value = email;
+
+        const interests = document.querySelector("#interests").textContent;
+        document.querySelector("#input-interests").value = interests;
+    }
+
+    function openEdit() {
+        document.querySelector(".name-input").style.display = "none";
+        document.querySelector(".email-input").style.display = "none";
+        document.querySelector(".interests-input").style.display = "none";
+    }
+
+    function saveEdit() {
+
+    }
+
+    function cancelEdit() {
+
+    }
+
+
+</script>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Home</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/save">Save</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/edit">Edit</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <form class='container mt-2'>
+        <h1 id='header'>User Profile</h1>
+        <img src='profile-picture' alt="profile-picture"></img>
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" class="form-control name-input"/>
+            <h3 id='name'>Mohamed Balaboula</h3>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control email-input"/>
+            <h3 id='email'>Mohamed.balaboula@gmail.com</h3>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Interests:</label>
+            <input type="text" class="form-control interests-input"/>
+            <h3 id='interests'>coding</h3>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="openEdit()">Edit Profile</button>
+        <button type="button" class="btn btn-success" onclick="saveEdit()">Save</button>
+        <button type="button" class="btn btn-danger" onclick="cancelEdit()">Cancel</button>
+    </form>
+</body>
+
+</html>
