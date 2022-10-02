@@ -39,6 +39,11 @@ app.get('/logo', function (req, res) {
   res.end(img, 'binary');
 });
 
+app.get('/icon', function (req, res) {
+  let img = fs.readFileSync(path.join(__dirname, "images/babiyo.ico"));
+  res.writeHead(200, {'Content-Type': 'image/icon' });
+  res.end(img, 'binary');
+});
 
 // use when starting application locally
 let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
@@ -50,7 +55,7 @@ let mongoUrlDocker = "mongodb://admin:password@mongodb";
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // "user-account" in demo with docker. "my-db" in demo with docker-compose
-let databaseName = "my-db";
+let databaseName = "user-account";
 
 app.post('/update-profile', function (req, res) {
   let userObj = req.body;
@@ -71,7 +76,7 @@ app.post('/update-profile', function (req, res) {
 
   });
   // Send response
-  res.send(userObj);
+  // res.send(userObj);
 });
 
 app.get('/get-profile', function (req, res) {
